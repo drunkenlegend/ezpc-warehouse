@@ -12,8 +12,7 @@ preprocess = transforms.Compose(
 )
 
 
-def get_arr_from_image(path):
-    img = Image.open(path)
+def get_arr_from_image(img):
     arr = preprocess(img).unsqueeze(0).cpu().detach().numpy()
 
     # broadcast to (1, 1, 54, 45, 45)
